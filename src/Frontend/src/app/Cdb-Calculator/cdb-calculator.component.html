@@ -1,0 +1,23 @@
+<p-card header="Simulador de CDB - B3">
+    <div class="p-fluid">
+      <div class="field">
+        <label for="valor">Valor do Investimento (R$)</label>
+        <p-inputNumber [(ngModel)]="initialAmount" inputId="valor" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+      </div>
+  
+      <div class="field">
+        <label for="prazo">Prazo (em meses)</label>
+        <p-inputNumber [(ngModel)]="months" inputId="prazo" mode="decimal" min="1" [showButtons]="true"></p-inputNumber>
+      </div>
+  
+      <p-button label="Calcular" icon="pi pi-check" (onClick)="calculate()"></p-button>
+  
+      <div *ngIf="result" class="result">
+        <h3>Resultado</h3>
+        <p><strong>Valor Bruto:</strong> R$ {{ result.grossAmount | number:'1.2-2' }}</p>
+        <p><strong>IR:</strong> R$ {{ result.incomeTax | number:'1.2-2' }}</p>
+        <p><strong>Valor Líquido:</strong> R$ {{ result.netAmount | number:'1.2-2' }}</p>
+      </div>
+    </div>
+  </p-card>
+  

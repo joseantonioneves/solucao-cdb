@@ -1,0 +1,25 @@
+services:
+  cdb-api:
+    build:
+      context: ./src/Backend/WebAPI
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./WebAPI/wwwroot:/app/wwwroot
+      - ./aspnetapp.pfx:/https/aspnetapp.pfx
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=MySecurePassword123
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+
+# Frontend Angular + Nginx
+frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - cdb-api

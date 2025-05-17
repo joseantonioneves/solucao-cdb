@@ -1,0 +1,13 @@
+.swagger-ui .topbar {
+    background-color: #004494;
+}
+
+.swagger-ui .topbar .topbar-wrapper img {
+    content: url("/swagger-ui/b3-logo.png");
+    width: 120px;
+    height: auto;
+}
+
+.swagger-ui .info {
+    margin-bottom: 30px;
+}
