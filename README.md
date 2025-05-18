@@ -10,6 +10,7 @@ Siga os passos abaixo para rodar a solução completa em sua máquina.
 ---
 
 ### **Pré-requisitos**
+- Possuir, minimamente, instalado o VSCode como ferramenta de desenvolvimento
 - Node versão 20.19.2 (não usar versão 22 ou superior. Incompatibilidade com o Angular 17
 - Docker versão 28.2 ou superior
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) instalado e em execução (facultativo. facilita a avaliação)
