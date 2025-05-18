@@ -1,4 +1,11 @@
 <p-card header="Simulador de CDB - B3">
+    <ng-template pTemplate="header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Simulador de CDB - B3</span>
+        <button pButton type="button" icon="pi pi-cog" class="p-button-rounded p-button-text"
+          (click)="openConfigPanel()" style="float: right"></button>
+      </div>
+    </ng-template>
     <div class="p-fluid">
       <div class="field">
         <label for="valor">Valor do Investimento (R$)</label>
@@ -19,5 +26,23 @@
         <p><strong>Valor Líquido:</strong> R$ {{ result.netAmount | number:'1.2-2' }}</p>
       </div>
     </div>
+
+    <p-sidebar [(visible)]="configPanelVisible" position="right" [baseZIndex]="10000">
+      <h3>Configurações</h3>
+      <div class="field">
+        <label>Tema:</label>
+        <p-selectButton [options]="themeOptions" [(ngModel)]="selectedTheme"></p-selectButton>
+      </div>
+      <div class="field">
+        <label>CDI (%):</label>
+        <input type="number" [(ngModel)]="cdi" class="p-inputtext p-component" />
+      </div>
+      <div class="field">
+        <label>TB (%):</label>
+        <input type="number" [(ngModel)]="tb" class="p-inputtext p-component" />
+      </div>
+      <button pButton label="Salvar" (click)="saveConfig()" class="p-mt-2"></button>
+    </p-sidebar>
+
   </p-card>
   
