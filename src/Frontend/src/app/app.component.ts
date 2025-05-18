@@ -6,7 +6,7 @@ import { CdbCalculatorComponent } from './Cdb-Calculator/cdb-calculator.componen
   standalone: true,
   imports: [CdbCalculatorComponent],
   template: `
-    <h1>Simulador de CDB</h1>
+    <h2>Renda Fixa</h2>
     <app-cdb-calculator></app-cdb-calculator>
   `,
   styles: []
