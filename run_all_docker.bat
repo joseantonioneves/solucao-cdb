@@ -7,6 +7,9 @@ echo === [RESOLVENDO CAMINHO ABSOLUTO DO CERTIFICADO PFX] ===
 FOR /F "delims=" %%i IN ('cd') DO set ROOT=%%i
 set PFX_PATH=%ROOT%\src\Backend\WebAPI\aspnetapp.pfx
 
+echo === [BUILD DO BACKEND EM RELEASE PARA GERAR O XML DE DOCUMENTAÇÃO] ===
+dotnet build ./src/Backend/WebAPI/WebAPI.csproj -c Release
+
 echo === [REBUILD DA IMAGEM DO BACKEND] ===
 docker build -t solucao-cdb-api .
 
