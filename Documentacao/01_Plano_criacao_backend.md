@@ -227,6 +227,6 @@ docker-compose up --build
 
 ### Acesso
 
-* Swagger UI: [https://localhost:5001/swagger](https://localhost:5001/swagger)
+* Swagger UI: [https://localhost:8443/swagger](https://localhost:8443/swagger)
 
 ```
