@@ -2,8 +2,10 @@
     <ng-template pTemplate="header">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <span>Simulador de CDB - B3</span>
+        <!--
         <button pButton type="button" icon="pi pi-cog" class="p-button-rounded p-button-text"
           (click)="openConfigPanel()" style="float: right"></button>
+        -->
       </div>
     </ng-template>
     <div class="p-fluid">
@@ -31,7 +33,7 @@
       <h3>Configurações</h3>
       <div class="field">
         <label>Tema:</label>
-        <p-selectButton [options]="themeOptions" [(ngModel)]="selectedTheme"></p-selectButton>
+        <p-selectButton [options]="themeOptions" [(ngModel)]="selectedTheme" (onChange)="onThemeChange()"></p-selectButton>
       </div>
       <div class="field">
         <label>CDI (%):</label>

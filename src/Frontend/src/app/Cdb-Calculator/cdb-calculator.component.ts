@@ -33,11 +33,11 @@ export class CdbCalculatorComponent {
 
 configPanelVisible = false;
   themeOptions = [
-    { label: 'Claro', value: 'light' },
-    { label: 'Sistema', value: 'system' },
-    { label: 'Escuro', value: 'dark' }
+    { label: 'Claro', value: 'saga-blue' },
+    { label: 'Sistema', value: 'saga-blue' },
+    { label: 'Escuro', value: 'saga-dark' }
   ];
-  selectedTheme = 'light';
+  selectedTheme = 'saga-blue';
   cdi = 13.65;
   tb = 1.08;
 
@@ -49,6 +49,13 @@ configPanelVisible = false;
     // Aqui você pode aplicar o tema e salvar os valores de CDI/TB
     this.configPanelVisible = false;
   }
+
+  onThemeChange() {
+  const themeLink = document.getElementById('app-theme') as HTMLLinkElement;
+  if (themeLink) {
+    themeLink.href = `assets/themes/${this.selectedTheme}/theme.css`;
+  }
+}
 
   constructor(private http: HttpClient) {}
 
