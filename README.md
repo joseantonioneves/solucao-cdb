@@ -50,7 +50,7 @@ Siga os passos abaixo para rodar a solução completa em sua máquina.
 
 ### **Observações**
 
-- O backend utiliza um certificado PFX para HTTPS, já incluído no projeto.
+- O backend utiliza um certificado PFX para HTTPS, já incluído no projeto. Este certificado é auto-assinado, então ao acessar pelo browser o swagger pela primeira vez, pode ser que o browse acuse o acesso inseguro. Nesse caso pressione o botão AVANÇADO e PROSSEGUIR mesmo assim.
 - O frontend se comunica com o backend via HTTPS na porta 8443.
 - Se for necessário liberar CORS para outros domínios, ajuste a configuração no arquivo `Program.cs` do backend.
 - Para parar os containers, utilize o Docker Desktop ou rode:
