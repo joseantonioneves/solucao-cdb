@@ -28,7 +28,7 @@ Siga os passos abaixo para rodar a solução completa em sua máquina.
    ```
 
 2. **Execute o script de deploy:**
-   - No Windows, clique duas vezes no arquivo `run_all_docker.bat`  (diretório solucao-cd)
+   - No Windows, clique duas vezes no arquivo `run_all_docker.bat`  (diretório solucao-cdb)
      **ou** execute pelo terminal do vscode (nesse caso: ```./run_all_docker```):
      
      ```Prompt cmd
