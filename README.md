@@ -57,6 +57,12 @@ Siga os passos abaixo para rodar a solução completa em sua máquina.
   ```sh
   docker stop solucao-cdb-api-container solucao-cdb-frontend-container
   ```
+  ou
+  ```sh
+  .\run_all_docker
+  ```
+  no diretório \solucao-cdb.
+  
 
 ---
 
