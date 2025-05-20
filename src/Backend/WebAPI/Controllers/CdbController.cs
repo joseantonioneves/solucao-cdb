@@ -27,7 +27,21 @@ public class CdbController : ControllerBase
     [ProducesResponseType(typeof(InvestmentResult), StatusCodes.Status200OK)]
     public IActionResult Calculate([FromBody] InvestmentInput input)
     {
-        var result = _cdbService.CalculateInvestment(input);
-        return Ok(result);
+        if (input == null) return BadRequest();
+
+        try
+        {
+            var result = _cdbService.CalculateInvestment(input);
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, "Erro Interno em Serviço no Servidor");
+        }
+        
     }
 }
